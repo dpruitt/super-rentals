@@ -1,0 +1,50 @@
+<Jumbo>
+  <h2>Add Rental</h2>
+  <p>Add a rental to increase the number of places to stay.</p>
+</Jumbo>
+
+<div class="form">
+  <div class="form__inputs">
+    <label for="rental-title">Title
+      <Input id="rental-title" @type="text" @value={{this.rental.title}} />
+    </label>
+
+    <label for="rental-owner">Owner
+      <Input id="rental-owner" @type="text" @value={{this.rental.owner}} />
+    </label>
+
+    <label for="rental-city">City
+      <Input id="rental-city" @type="text" @value={{this.rental.city}} />
+    </label>
+
+    <label for="rental-lat">Latitude
+      <Input id="rental-lat" @type="text" @value={{this.rental.location.lat}} />
+    </label>
+
+
+    <label for="rental-lng">Longitude
+      <Input id="rental-lng" @type="text" @value={{this.rental.location.lng}} />
+    </label>
+
+    <label for="rental-category">Category
+      <Input id="rental-category" @type="text" @value={{this.rental.category}} />
+    </label>
+
+    <label for="rental-image">Image
+      <Input id="rental-image" @type="text" @value={{this.rental.image}} />
+    </label>
+
+    <label for="rental-bedrooms">Bedrooms
+      <Input id="rental-bedrooms" @type="text" @value={{this.rental.bedrooms}} />
+    </label>
+
+    <label for="rental-description">Description
+      <Textarea id="rental-description" @type="text" @value={{this.rental.description}} rows="3" cols="80" />
+    </label>
+  </div>
+
+  <div class="form__controls">
+    <button class="button" {{on "click" this.saveRental}}>Save Rental</button>
+  </div>
+</div>
+

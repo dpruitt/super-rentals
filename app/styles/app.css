@@ -465,3 +465,29 @@ p {
   height: 1px; width: 1px;
   margin: -1px; padding: 0; border: 0;
 }
+
+
+.form__inputs {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form__inputs label {
+  margin: 1rem;
+}
+
+.form__inputs input {
+  display: block;
+  padding: 0.25rem;
+}
+
+.form__inputs textarea {
+  display: block;
+  padding: 0.25rem;
+}
+
+.form__controls {
+  margin: 2rem 1rem;
+}
