@@ -6,6 +6,7 @@ import { tracked } from '@glimmer/tracking';
 export default class AddRentalController extends Controller {
   @service store;
   @service router;
+  @service flashMessages;
 
   @tracked rental = this.store.createRecord('rental');
 
@@ -15,7 +16,8 @@ export default class AddRentalController extends Controller {
       await this.rental.save();
       this.router.transitionTo('/');
     } catch(error) {
-      alert(error);
+      console.log(error);
+      this.flashMessages.danger(error.message)
     }
   }
 }

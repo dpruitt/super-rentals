@@ -3,6 +3,10 @@
   <p>Add a rental to increase the number of places to stay.</p>
 </Jumbo>
 
+{{#each this.flashMessages.queue as |flash|}}
+  <FlashMessage @flash={{flash}} />
+{{/each}}
+
 <div class="form">
   <div class="form__inputs">
     <label for="rental-title">Title
