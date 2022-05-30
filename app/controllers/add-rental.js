@@ -35,7 +35,6 @@ export default class AddRentalController extends Controller {
       await rental.save();
       this.router.transitionTo('/');
     } catch(error) {
-      console.log(error);
       this.flashMessages.danger(error.message)
     }
   }

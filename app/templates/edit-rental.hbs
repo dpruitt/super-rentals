@@ -1,0 +1,55 @@
+<Jumbo>
+  <h2>Edit Rental</h2>
+  <p>Edit a rental because you messed some data up.</p>
+</Jumbo>
+
+{{#each this.flashMessages.queue as |flash|}}
+  <FlashMessage @flash={{flash}} />
+{{/each}}
+
+<div class="form">
+  <div class="form__inputs">
+    <label for="rental-title">Title
+      <Input id="rental-title" @type="text" @value={{@model.title}} />
+    </label>
+
+    <label for="rental-owner">Owner
+      <Input id="rental-owner" @type="text" @value={{@model.owner}} />
+    </label>
+
+    <label for="rental-city">City
+      <Input id="rental-city" @type="text" @value={{@model.city}} />
+    </label>
+
+    <label for="rental-lat">Latitude
+      <Input id="rental-lat" @type="text" @value={{@model.lat}} />
+    </label>
+
+
+    <label for="rental-lng">Longitude
+      <Input id="rental-lng" @type="text" @value={{@model.lng}} />
+    </label>
+
+    <label for="rental-category">Category
+      <Input id="rental-category" @type="text" @value={{@model.category}} />
+    </label>
+
+    <label for="rental-image">Image
+      <Input id="rental-image" @type="text" @value={{@model.image}} />
+    </label>
+
+    <label for="rental-bedrooms">Bedrooms
+      <Input id="rental-bedrooms" @type="text" @value={{@model.bedrooms}} />
+    </label>
+
+    <label for="rental-description">Description
+      <Textarea id="rental-description" @type="text" @value={{@model.description}} rows="3" cols="80" />
+    </label>
+  </div>
+
+  <div class="form__controls">
+    <button class="button" {{on "click" this.saveRental}}>Save Rental</button>
+    <button class="button button--cancel" {{on "click" this.cancel}}>Cancel</button>
+  </div>
+</div>
+
