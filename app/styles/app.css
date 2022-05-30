@@ -58,6 +58,8 @@ p {
   font-weight: bold;
   opacity: 0.9;
   display: inline-block;
+
+  cursor: pointer;
 }
 
 .button:hover {
@@ -490,6 +492,15 @@ p {
 
 .form__controls {
   margin: 2rem 1rem;
+}
+
+.form__controls > .button {
+  margin-right: 1rem;
+}
+
+.button--cancel {
+  background-color: #ccc;
+  color: #333;
 }
 
 .alert {

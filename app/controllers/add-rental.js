@@ -14,10 +14,16 @@ export default class AddRentalController extends Controller {
   async saveRental() {
     try {
       await this.rental.save();
-      this.router.transitionTo('/');
+      this.cancel(); // this is a bit confusing, but need to reset state if you come back to this route
     } catch(error) {
       console.log(error);
       this.flashMessages.danger(error.message)
     }
+  }
+
+  @action
+  cancel() {
+    this.rental.rollbackAttributes();
+    this.router.transitionTo('/');
   }
 }
