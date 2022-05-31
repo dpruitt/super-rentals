@@ -1,5 +1,11 @@
 <div class="container">
-  <NavBar />
+  <NavBar>
+    {{#if this.session.isAuthenticated}}
+      <a {{on "click" this.invalidateSession}}>Logout</a>
+    {{else}}
+      <LinkTo @route="login">Login</LinkTo>
+    {{/if}}
+  </NavBar>
   <div class="body">
     {{outlet}}
   </div>

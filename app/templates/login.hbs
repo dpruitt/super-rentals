@@ -1,0 +1,24 @@
+<Jumbo>
+  <h2>Login</h2>
+</Jumbo>
+
+{{#each this.flashMessages.queue as |flash|}}
+  <FlashMessage @flash={{flash}} />
+{{/each}}
+
+<div class="form">
+  <div class="form__inputs">
+    <label for="username">Username
+      <Input id="username" @type="text" @value={{this.username}} />
+    </label>
+
+    <label for="password">Password
+      <Input id="password" @type="password" @value={{this.password}} />
+    </label>
+  </div>
+
+  <div class="form__controls">
+    <button class="button" {{on "click" this.authenticate}}>Login</button>
+  </div>
+</div>
+
